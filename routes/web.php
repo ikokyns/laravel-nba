@@ -25,3 +25,9 @@ Route::post('/login', 'LoginController@login');
 Route::get('/logout', 'LoginController@logout');
 
 Route::post('/teams/{id}/comment', 'CommentsController@store');	
+
+Route::post('/user/activate/{id}', 'UsersController@activate');
+
+Route::get('/welcome', function() {
+	return view('welcome');
+});

@@ -9,6 +9,7 @@ class TeamsController extends Controller
     public function __construct()
     {
         $this->middleware('auth', ['except' => 'index']);
+        $this->middleware('logoutInactive');
     }
 
     public function index()

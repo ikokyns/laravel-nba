@@ -29,6 +29,12 @@ class LoginController extends Controller
     		]);
     	}
 
+        if (auth()->user()->activated == false) {
+            $user_id = auth()->user()->id;
+            
+            return view('activate-user', compact('user_id'));
+        }
+
     	return redirect('/');
     }
 

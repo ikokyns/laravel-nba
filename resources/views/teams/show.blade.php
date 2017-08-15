@@ -11,4 +11,22 @@
 		<li><a href="/players/{{ $player->id }}">{{ $player->first_name . ' ' . $player->last_name }}</a></li>
 		@endforeach
 	</ul>
+
+	<h4>Comments</h4>
+	<hr>
+
+	@foreach($team->comments as $comment)
+		<p>{{ $comment->content }}</p>
+		<hr>
+	@endforeach
+
+	<form method="POST" action="/teams/{{ $team->id }}/comment">
+		{{ csrf_field() }}
+
+		<textarea name="content"></textarea>
+		<button>Submit</button>
+	</form>
+
+	@include('partials.errors')
+
 @endsection

@@ -19,6 +19,6 @@ Route::get('/players/{id}', 'PlayersController@show');
 Route::get('/register', 'RegistrationController@index');
 Route::post('/register', 'RegistrationController@register');
 
-Route::get('/login', 'LoginController@index');
+Route::get('/login', 'LoginController@index')->name('login');
 Route::post('/login', 'LoginController@login');
 Route::get('/logout', 'LoginController@logout');

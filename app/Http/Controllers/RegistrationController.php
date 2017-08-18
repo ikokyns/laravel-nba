@@ -27,6 +27,7 @@ class RegistrationController extends Controller
     	$user = new \App\User;
     	$user->name = request('name');
     	$user->email = request('email');
+        $user->activated = true;
     	$user->password = bcrypt(request('password'));	
     	$user->save();
 

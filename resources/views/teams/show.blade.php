@@ -23,8 +23,14 @@
 	<form method="POST" action="/teams/{{ $team->id }}/comment">
 		{{ csrf_field() }}
 
-		<textarea name="content"></textarea>
-		<button>Submit</button>
+		<div class="form-group">
+            <label for="body">Content</label>
+            <textarea class="form-control" id="body" name="content"></textarea>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
 	</form>
 
 	@include('partials.errors')

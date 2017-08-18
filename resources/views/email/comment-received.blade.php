@@ -2,6 +2,6 @@
 
 <p>Yoy have new comment on your team
 	<a href="{{ url('team/' . $team->id) }}">
-		{{ $team->title }}
+		{{ $team->name }}
 	</a>
 </p>
